@@ -17,6 +17,10 @@ import { TbLayoutGrid } from "react-icons/tb";
 import { HiChevronRight } from "react-icons/hi";
 import { RiFilter3Fill ,RiBookLine } from "react-icons/ri";
 
+interface ToolbarButtonProps {
+  icon: React.ReactNode;
+  label: string;
+}
 
 
 export default function Header() {
@@ -102,7 +106,7 @@ export default function Header() {
 }
 
 // Reusable toolbar button
-function ToolbarButton({ icon, label }) {
+const ToolbarButton: React.FC<ToolbarButtonProps>=({ icon, label }) =>{
   return (
     <button className="flex cursor-pointer items-center gap-1 border border-gray-50 px-3 py-1.5 rounded-md text-sm hover:bg-gray-100 text-gray-700">
       {icon}

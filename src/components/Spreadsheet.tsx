@@ -131,7 +131,7 @@ const Spreadsheet = () => {
           </th>
 
           <th className="bg-[#E0D3FF] border-white border-2" colSpan={2}>
-            <div className="flex items-center justify-center cursor-pointer gap-1 text-[#5f5676] text-[17px] font-medium px-5 cursor-pointer">
+            <div className="flex items-center justify-center  gap-1 text-[#5f5676] text-[17px] font-medium px-5 cursor-pointer">
              <TbArrowFork className="rotate-180  text-white gap-3" />
               Answer a Question
               <TbDots className="text-gray-400 text-sm" />
@@ -156,7 +156,8 @@ const Spreadsheet = () => {
   <tr>
     {headers.map((header, index) => {
       // Apply color conditionally based on label
-     const bgColor = colorMap[header.label] || '';
+       const bgColor = header.label ? colorMap[header.label] ?? '' : '';
+
        
       // Identify last two columns
       const isLastTwo = index === headers.length - 1 || index === headers.length - 2;
